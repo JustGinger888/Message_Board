@@ -1,0 +1,30 @@
+{
+  "name": "cappucoffee",
+  "version": "1.0.0",
+  "description": "Coffee orders on the GO!",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustGinger888/CappuCoffee.git"
+  },
+  "author": "JustGinger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustGinger888/CappuCoffee/issues"
+  },
+  "homepage": "https://github.com/JustGinger888/CappuCoffee#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "loading-cli": "^1.1.0",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.10"
+  }
+}
