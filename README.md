@@ -1,10 +1,24 @@
-# CappuCoffee
+# cuppacoffee
 
-Office coffee run app
+## Project setup
+```
+npm install
+```
 
-1. Users register and authenticate themselves
-2. Create their go to brew add to list - can have multiple
-3. Option to Join Groups
-4. Runner can send request for Associates to add to
-5. Associates add their drink of choice
-6. New list is created and sent to Runner
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
