@@ -1,0 +1,19 @@
+{
+  "name": "cuppacoffee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustGinger888/CappuCoffee.git"
+  },
+  "author": "JustGinger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustGinger888/CappuCoffee/issues"
+  },
+  "homepage": "https://github.com/JustGinger888/CappuCoffee#readme"
+}
