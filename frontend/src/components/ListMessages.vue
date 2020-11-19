@@ -19,16 +19,9 @@
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
-  data() {
-    return {
-    };
-  },
   async created() {
-    let messages = (await axios.get("http://localhost:8880/messages")).data;
-    this.$store.commit( 'updateMessages', messages);
-  },
-};
+    this.$store.dispatch('getMessages');
+  }
+}
 </script>

@@ -2,31 +2,27 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
       dark
     >
-
+      <v-btn depressed to="/">List Messages</v-btn>
+      <v-btn depressed to="/NewMessage">New Messages</v-btn>
+      <v-spacer></v-spacer>
+      <v-btn depressed>Login</v-btn>
     </v-app-bar>
 
     <v-main>
       <br>
-      <NewMessage/>
-      <br>
-      <Messages/>
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script>
-import Messages from './components/Messages';
-import NewMessage from './components/NewMessage';
 
 export default {
   name: 'App',
 
   components: {
-    Messages,
-    NewMessage
   },
 
   data: () => ({
