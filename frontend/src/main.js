@@ -7,13 +7,15 @@ import VueRouter from 'vue-router'
 
 import ListMessages from './components/ListMessages';
 import NewMessages from './components/NewMessage';
+import ViewMessages from './components/ViewMessage';
 
 Vue.use(Vuetify);
 Vue.use(VueRouter);
 
 const routes = [
   {path: "/", component: ListMessages},
-  {path: "/NewMessage", component: NewMessages}
+  {path: "/NewMessage", component: NewMessages},
+  {path: "/ViewMessage/:id", component: ViewMessages}
 ]
 
 const router = new VueRouter({routes, mode: 'history'})

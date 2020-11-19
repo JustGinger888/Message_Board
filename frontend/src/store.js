@@ -26,6 +26,6 @@ export default new Vuex.Store({
                 message: messageBody
               })).data;
               commit('newMessage', msg.message);
-        }
+        },
     }
 })
