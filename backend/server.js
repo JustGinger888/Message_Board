@@ -22,8 +22,10 @@ app.get('/messages', (req, res) => {
 // Sends Data
 app.post('/messages', (req, res) => {
     let msg = req.body;
+    console.log(msg);
     messages.push(msg.message);
-    res.json();
+    res.json(msg);
+    console.log(messages);
 });
 
 
