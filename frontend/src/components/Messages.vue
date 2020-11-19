@@ -4,13 +4,11 @@
 
     <v-list dense>
       <v-list-item-group
-        v-model="selectedItem"
         color="primary"
       >
         <v-list-item
           v-for="message in messages"
           :key="message"
-          v-on:click="c"
         >
           <v-list-item-content>
             <v-list-item-title v-text="message"></v-list-item-title>
@@ -21,11 +19,18 @@
   </div>
 </template>
 <script>
+import axios from 'axios'
+
 export default {
   data() {
     return {
-      messages: ["Hello", "Hi"]
+      messages: ["Hello", "Hi", "bye"]
     }
-  }
+  },
+  async created() {
+    console.log("Created");
+    this.messages = (await axios.get('http://localhost:8880/messages')).data;
+
+  },
 }
 </script>
