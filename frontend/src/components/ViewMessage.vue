@@ -5,23 +5,27 @@
         <v-toolbar-title>View Messages</v-toolbar-title>
       </v-toolbar>
       <v-card-text>
-        {{messageBody}}
+        {{ message.text }}
       </v-card-text>
     </v-card>
   </v-flex>
 </template>
 
 <script>
-import axios from 'axios';
 export default {
   data() {
     return {
-      messageBody: ""
+      message: "",
     };
   },
   async created() {
-    var messageid = this.$route.params.id;
-    this.messageBody = (await axios.get(`http://localhost:8880/messages/${messageid}`)).data;
+    try {
+      this.message = (
+        await this.$store.dispatch("getMessage", this.$route.params.id)
+      ).data;
+    } catch (error) {
+      console.log(error);
+    }
   },
 };
 </script>

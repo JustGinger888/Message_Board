@@ -7,7 +7,9 @@
       <v-btn depressed to="/">List Messages</v-btn>
       <v-btn depressed to="/NewMessage">New Messages</v-btn>
       <v-spacer></v-spacer>
-      <v-btn depressed>Login</v-btn>
+      <v-btn depressed v-if="!$store.state.token" to="/Register">Register</v-btn>
+      <v-btn depressed v-if="!$store.state.token" to="/Login">Login</v-btn>
+      <v-btn depressed v-if="$store.state.token" @click="$store.commit('logout')">Logout</v-btn>
     </v-app-bar>
 
     <v-main>
@@ -26,7 +28,6 @@ export default {
   },
 
   data: () => ({
-    //
   }),
 };
 </script>

@@ -7,9 +7,17 @@
 
       <v-list dense>
         <v-list-item-group color="primary">
-          <v-list-item v-for="(message, index) in $store.state.messages" :key="message" :to="`ViewMessage/`+index">
+          <!--Looping through data and Creating list with associated link-->
+          <v-list-item
+            v-for="(message, index) in $store.state.messages"
+            :key="index"
+            :to="`ViewMessage/` + index"
+          >
             <v-list-item-content>
-              <v-list-item-title v-text="message"></v-list-item-title>
+              <v-list-item-title v-text="message.text"></v-list-item-title>
+              <v-list-item-subtitle
+                v-text="message.user"
+              ></v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
@@ -21,7 +29,11 @@
 <script>
 export default {
   async created() {
-    this.$store.dispatch('getMessages');
-  }
-}
+    try {
+      this.$store.dispatch("getMessages");
+    } catch (error) {
+      console.log(error);
+    }
+  },
+};
 </script>

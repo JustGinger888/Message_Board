@@ -24,21 +24,25 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
-      messageBody: ""
+      messageBody: "",
     };
   },
   methods: {
     async submit() {
       try {
-        this.$store.dispatch('newMessage', this.messageBody);
-        
+        axios.defaults.headers.common[
+          "Authorization"
+        ] = this.$store.state.token; // Adding Auth Token To Avoid Page Reload Loss
+        this.$store.dispatch("newMessage", this.messageBody);
       } catch (error) {
         console.error(error);
       }
-    }
-  }
+    },
+  },
 };
 </script>
