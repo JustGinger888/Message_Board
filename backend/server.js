@@ -3,13 +3,30 @@ const express = require('express');
 const bodyParser = require('body-parser'); // Parses Json Data
 const cors = require('cors'); // Allow Frontend to access data from different port
 const jwt = require('jsonwebtoken');
+var mongo = require('mongodb'); // Add Mongo
+var MongoClient = require('mongodb').MongoClient; // Add mongo Client
+const mongoose = require("mongoose");
 
 const app = express();
-const { WEB_PORT, SECRET } = process.env; // Process contents of .env File
+const { WEB_PORT, SECRET, MONGODB_URI } = process.env; // Process contents of .env File
+
+
+// Connecting the Database via Mongoose
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connection.on("error", (err) => {
+  console.error(err);
+  console.log(
+    "MongoDB connection error. Please make sure MongoDB is running.",
+    chalk.red("✗")
+  );
+  process.exit();
+});
+
 
 // Middlewear
 app.use(cors());
 app.use(bodyParser.json())
+
 
 // Stored Data
 var messages = [{ user: "Jim", text: "From" }, { user: "Jim", text: "Backend" }];
