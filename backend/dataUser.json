@@ -1,0 +1,17 @@
+{
+    "id": "",
+    "email":"",
+    "password":"",
+    "username":"",
+    "drinks" : {
+        "id" : {
+            "identifier" :"",
+            "description":"",
+            "strength":"",
+            "milk":"",
+            "sugars":""
+        }
+    },
+    "groups": ["id"],
+    "orders": ["id"]
+}
